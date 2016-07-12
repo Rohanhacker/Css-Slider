@@ -1,11 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Anton);
+
 body {
   margin: 0;
 }
 .container {
+  color: white;
   position: relative;
   overflow: hidden;
   height: 100vh;
   width: 100vw;
+  h2 {
+    text-align: center;
+    font-size: 4.6em;
+    color: white;
+    font-family: 'Anton', sans-serif;  }
   input[type="radio"] {
     position: absolute;
     z-index: 10;
@@ -34,11 +42,21 @@ body {
         image: url("../img/r"+$i+".jpg");
         size: cover;
       }
+      h2 {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
     }
   }
+
   [id^="s"]:checked + .slide {
     transition: all 0.65s ease-out;
     left: 0;
     z-index: 3;
+    h2 {
+      transition: transform 0.82s 0.5s ease, opacity 0.8s 0.7s ease;
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   }
