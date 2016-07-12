@@ -1,9 +1,32 @@
-.input-group {
-  width: 60%;
-  margin: 80vh auto 0 ;
-  display: flex;
-  justify-content: center;
+body {
+  margin: 0;
 }
-input[type="radio"] {
-  margin: auto 30px;
-}
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  .input-group {
+    position: absolute;
+    z-index: 10;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  input[type="radio"] {
+    margin: 10px;
+  }
+  .slide{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+  }
+  @for $i from 1 through 3 {
+    .slide#{$i} {
+      background: {
+        image: url("../img/r"+$i+".jpg");
+        size: cover;
+      }
+    }
+  }
+  }
