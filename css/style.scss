@@ -2,24 +2,31 @@ body {
   margin: 0;
 }
 .container {
-  height: 100%;
-  width: 100%;
+  position: relative;
   overflow: hidden;
-  .input-group {
+  height: 100vh;
+  width: 100vw;
+  input[type="radio"] {
     position: absolute;
     z-index: 10;
     top: 90%;
-    left: 50%;
-    transform: translate(-50%,-50%);
   }
-  input[type="radio"] {
-    margin: 10px;
+  #s1 {
+    left: 40%;
+  }
+  #s2 {
+    left: 50%;
+  }
+  #s3 {
+    left: 60%;
   }
   .slide{
     position: absolute;
     top: 0;
     height: 100%;
     width: 100%;
+    left: 100%;
+    transition: left 0s 1s;
   }
   @for $i from 1 through 3 {
     .slide#{$i} {
@@ -28,5 +35,10 @@ body {
         size: cover;
       }
     }
+  }
+  [id^="s"]:checked + .slide {
+    transition: all 0.65s ease-out;
+    left: 0;
+    z-index: 3;
   }
   }
